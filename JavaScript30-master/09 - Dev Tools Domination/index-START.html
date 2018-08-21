@@ -6,7 +6,7 @@
 </head>
 <body>
 
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+  <p class="meh" onClick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
@@ -18,28 +18,78 @@
     }
 
     // Regular
+    console.log('hey there');
 
     // Interpolated
+    console.log('Howdy there you %s', '💩');
+    console.log(`How are you, you silly ${'💩'}`);
 
     // Styled
+    console.log('%c Wakka wakka', 'font-size: 50px; background: cornflowerblue; text-shadow: 8px 8px 0 fuchsia; color: crimson');
 
     // warning!
+    console.warn("MELTDOOOWWWNNN IMMINeNT!!  SAVE YOURSELVES!! and me..");
 
     // Error :|
+    console.error("Tha don go der");
 
     // Info
+    console.info('1% of people are psychopaths, maybe more');
 
     // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), 'That is wrong!');
+    console.assert(p.classList.contains("meh"), 'That is wrong!');
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
 
     // counting
+    console.count('Cacarotto');
+    console.count('Biibly');
+    console.count('Biibly');
+    console.count('Biibly');
+    console.count('Alvin');
+    console.count('Alvin');
+    console.count('Alvin');
+    console.count('Cacarotto');
+    console.count('Cacarotto');
+    console.count('Biibly');
+    console.count('Biibly');
+    console.count('Biibly');
+    console.count('Cacarotto');
+    console.count('Alvin');
+    console.count('Alvin');
+    console.count('Cacarotto');
+    console.count('Cacarotto');
+    console.count('Cacarotto');
+
+    console.clear();
 
     // timing
+    console.time('alsdfhasfs');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('alsdfhasfs');
+        // console.log(data);
+      });
+
+      console.table(dogs);
 
   </script>
 </body>
